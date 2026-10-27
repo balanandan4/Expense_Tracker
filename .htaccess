@@ -1,0 +1,19 @@
+# ============================================================================
+# Ledger — Expense Tracker with Budget Analysis (Project ETBA-2026)
+# Apache .htaccess for XAMPP Subdirectory Deployment (e.g., htdocs/ledger/)
+# ============================================================================
+
+Options -Indexes
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Block direct HTTP access to sensitive directories and SQL/config files
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(config|database|app|scripts|tests)/ - [F,L]
+    RewriteRule \.(sql|env|example\.php|md|json|lock)$ - [F,L]
+</IfModule>

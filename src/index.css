@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #0a0d0c;
+    --bg-raised: #101513;
+    --bg-elevated: #151c19;
+    --line: #1e2624;
+    --mint: #4ff0b7;
+    --mint-dim: #2c8a68;
+    --gold: #f0b429;
+    --coral: #ff6b6b;
+    --text: #e9efec;
+    --muted: #8ba39a;
+    --faint: #5a6b65;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    letter-spacing: -0.015em;
+  }
+
+  .font-mono, .tabular-nums {
+    font-family: 'IBM Plex Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Subtle architectural dot grid matching the Ledger prototype */
+.ledger-grid-bg {
+  background-image: radial-gradient(rgba(79, 240, 183, 0.04) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
